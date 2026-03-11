@@ -13,6 +13,9 @@
     --rock-dark-1: #36363b;
     --rock-dark-2: #1d203f;
 }
+body{
+    height: 300vh;
+}
 
 .scene{
     height: 100vh;
@@ -84,7 +87,7 @@
 }
 
 .c2{
-    animation: clouds-r 100s alternate;
+    animation: clouds-r 70s alternate;
     filter: blur(2px);
     background: currentcolor;
     color: var(--lw);
@@ -102,7 +105,7 @@
 }
 
 .c3{
-    animation: clouds-l 75s alternate;
+    animation: clouds-l 40s alternate;
     opacity: 0.3;
     filter: blur(3px);
     background: currentcolor;
@@ -182,7 +185,7 @@
 }
 
 /*Foreground CSS*/
-.forground{
+.foreground{
   bottom: 0;
   left: 0;
   right: 0;
@@ -319,4 +322,34 @@
   100% {
     transform: rotate(5deg) translateY(0);
   }
+}
+
+.boat-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.boat {
+    width: 80vw; 
+    max-width: 100%;
+    height: auto; 
+}
+
+.boat,.c2,.c3,.rock-r,.rock-l{
+  will-change: transform;
+}
+
+.c2-scroll,.c3-scroll,.grass-l-scroll,.grass-r-scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
